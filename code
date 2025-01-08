@@ -1,0 +1,21 @@
+# Install the necessary libraries using pip
+# langdetect: For detecting the language of input text.
+# langcodes: For converting the language code into the full language name.
+pip install langdetect
+pip install langcodes
+
+# Importing the necessary libraries
+from langdetect import detect  # To detect the language code from text
+import langcodes  # To convert the detected language code into a full language name
+
+# Prompt the user to input text for language detection
+text = input("Enter the text word that u need:")  # Taking input text from the user
+
+# Detect the language of the input text using langdetect
+lang_code = detect(text)  # This returns the detected language code (e.g., 'en' for English)
+
+# Convert the language code to its full name using langcodes
+lang_name = langcodes.get(lang_code).display_name()  # Converts 'en' to 'English'
+
+# Print the detected language name
+print(lang_name)  # Display the full name of the detected language
